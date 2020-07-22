@@ -1,0 +1,43 @@
+/* Allows h-100 classes to work */
+html {
+    height: 100%
+}
+
+/* Background Image */
+body {
+    background: url('/media/background2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    /* Height of image set to 100vh - the navbar height */
+    height: calc(100vh - 56px); 
+}
+
+/* Making the background image darker */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+/* Bulma */
+/* Makes Font Awesome icons have a consistent size and stay centered */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+/* Pushes the page below the navbar */
+.header-container {
+    padding-top: 56px;
+}
+
+/* Nav Bar Styles */
+.navbar {
+    box-shadow: 0 5px 10px 5px black;
+}
