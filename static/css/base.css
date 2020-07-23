@@ -3,25 +3,6 @@ html {
     height: 100%
 }
 
-/* Background Image */
-body {
-    background: url('/media/background2.jpg') no-repeat center center fixed;
-    background-size: cover;
-    /* Height of image set to 100vh - the navbar height */
-    height: calc(100vh - 56px); 
-}
-
-/* Making the background image darker */
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-}
-
-
 /* Bulma */
 /* Makes Font Awesome icons have a consistent size and stay centered */
 .icon {
@@ -32,12 +13,78 @@ body {
     width: 1.5rem;
 }
 
+
+
+/* ------------------ index.html Styles ------------------ */
+
+/* Aligns the Jumbo to the Right on Large Screens */
+.body-container {
+    display: flex; justify-content: flex-end;
+}
+
 /* Pushes the page below the navbar */
 .header-container {
-    padding-top: 56px;
+    padding-top: 59px;
 }
 
 /* Nav Bar Styles */
 .navbar {
     box-shadow: 0 5px 10px 5px black;
+}
+
+/* Background Image */
+body {
+    background: url('/media/background2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    /* Height of image set to 100vh - the navbar height */
+    height: calc(100vh - 56px); 
+}
+
+/* Jumbotron Styles */
+.jumbotron {
+    box-shadow: 0 2px 10px 2px black;
+    max-width: 1070px;
+}
+
+
+
+/* ------------------ Media Queries ------------------ */
+
+/* Pushing Page Below NavBar on Smaller Screens */
+@media (max-width: 380px) {
+    .header-container {
+        margin-bottom: 30px;
+    }
+}
+@media (max-width: 290px) {
+    .header-container {
+        margin-bottom: 60px;
+    }
+}
+@media (max-height: 590px) {
+    .header-container {
+        margin-bottom: 59px;
+    }
+}
+
+/* Adding Margin to Jumbo on Large Screens */
+@media (min-width: 1325px) {
+    .jumbotron {
+        margin-right: 100px;
+    }
+}
+
+/* Centering Jumbo on Smaller Screens */
+@media (max-width: 1325px) {
+    .body-container {
+        justify-content: center;
+    }
+}
+
+/* Removing Background and Border from the Jumbo on Big Screens */
+@media (min-width: 2000px) {
+    .jumbotron {
+        background-color: transparent;
+        box-shadow: none;
+    }
 }

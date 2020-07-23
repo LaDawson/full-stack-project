@@ -7,16 +7,20 @@
 
 {% block content %}
 
-    <div class="container h-100 body-container">
-        <div class="row h-100">
+    <div class="container-fluid no-gutters h-100 body-container">
+        <div class="row h-100 justify-content-end align-items-center">
             <div class="col my-auto title-box">
                 <!-- Page Title -->
-                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Header</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Dark card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
+                <!-- Card from Bootstrap -->
+                <div class="jumbotron">
+                    <h1 class="display-4">Welcome</h1>
+                    <p class="lead">
+                        My name is Lewis, I am a web developer that has experience developing the front end and back end aspects of websites. 
+                        With this knowledge I can help you create anything from a small startup site for a new business to a fully functional eCommerce store.
+                    </p> 
+                    <hr class="my-4">
+                    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
                 </div>
             </div>
         </div>
