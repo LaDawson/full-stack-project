@@ -13,6 +13,11 @@ html {
     width: 1.5rem;
 }
 
+/* Font for Titles */
+.logo-font {
+    text-transform: uppercase;
+    font-family: 'Lato', sans-serif;
+}
 
 
 /* ------------------ index.html Styles ------------------ */
@@ -29,7 +34,7 @@ html {
 
 /* Nav Bar Styles */
 .navbar {
-    box-shadow: 0 5px 10px 5px black;
+    box-shadow: 0 5px 10px 2px black;
 }
 
 /* Background Image */
@@ -38,6 +43,7 @@ body {
     background-size: cover;
     /* Height of image set to 100vh - the navbar height */
     height: calc(100vh - 56px); 
+    font-family: 'Patua One', cursive;
 }
 
 /* Jumbotron Styles */
@@ -46,7 +52,9 @@ body {
     max-width: 1070px;
 }
 
-
+.footer {
+    box-shadow: 0 -2px 5px black;
+}
 
 /* ------------------ Media Queries ------------------ */
 
