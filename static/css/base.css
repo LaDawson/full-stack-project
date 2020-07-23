@@ -57,7 +57,75 @@ body {
     box-shadow: 0 -2px 5px black;
 }
 
+
+
+/* ------------------ Allauth Templates ------------------ */
+
+/* Styles for form container */
+.allauth-jumbo {
+    box-shadow: 0 2px 10px 2px black;
+    background-color: white;
+    width: 100%
+}
+.form-container {
+    justify-content: center;
+    display: flex;
+}
+.form-text {
+    width: 90%;
+    text-align: center;
+    margin: auto;
+}
+.row-size-form {
+    width: 50%
+}
+
+/* Form Buttons + Links */
+button {
+    background: none;
+    border: none;
+}
+
+.btn-outline-black {
+    border: 2px solid black;
+}
+
+.forgot-password {
+    margin-bottom: 2%;
+}
+.sign-in {
+    padding-top: 2%;
+}
+
+label[for="id_login"],
+label[for="id_password"] { 
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+label[for="id_remember"] {
+    content: "Organization"; 
+}
+
 /* ------------------ Media Queries ------------------ */
+
+/* Making the Allauth forms bigger on smaller screens */
+@media (max-width: 1000px) {
+    .row-size-form {
+        width: 80%;
+    }
+}
+@media (max-width: 300px) {
+    .row-size-form {
+        width: 95%;
+    }
+}
 
 /* Pushing Page Below NavBar on Smaller Screens */
 @media (max-width: 380px) {
@@ -77,14 +145,14 @@ body {
 }
 
 /* Adding Margin to Jumbo on Large Screens */
-@media (min-width: 1325px) {
+@media (min-width: 2000px) {
     .jumbotron {
         margin-right: 100px;
     }
 }
 
 /* Centering Jumbo on Smaller Screens */
-@media (max-width: 1325px) {
+@media (max-width: 2000px) {
     .body-container {
         justify-content: center;
     }
