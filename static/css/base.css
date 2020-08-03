@@ -90,10 +90,7 @@ button {
     border: 2px solid black;
 }
 
-.forgot-password {
-    margin-bottom: 2%;
-}
-.sign-in {
+.form-title {
     padding-top: 2%;
 }
 
@@ -117,6 +114,10 @@ label[for="id_password2"] {
 /* Stops Checkbox of "remember me" input being 220px */
 input:not([type="checkbox"]) {
     width:220px
+}
+
+form {
+    padding-bottom: 2%;
 }
 
 

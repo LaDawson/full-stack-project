@@ -5,7 +5,7 @@
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block form_content %}
-<h1 class="display-4 logo-font form-text sign-in">Sign Up</h1>
+<h1 class="display-4 logo-font form-text form-title">Sign Up</h1>
 <p class="lead form-text">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
 <hr class="my-4">
 <form class="signup form-text" id="signup_form" method="post" action="{% url 'account_signup' %}">
