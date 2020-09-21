@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="header-container"></div>
+{% endblock %}
+
+{% block content %}
+    <div class="col-12 col-lg-6">
+        <p class="text-muted">Hi, Please fill out the form</p>
+        <form action="{% url 'consultation' %}" methods="POST" id="consultation-form">
+            {% csrf_token %}
+            <fieldset class="rounded px-3 mb-5">
+                <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
+                {{ consultation_form.first_name }}
+                {{ consultation_form.last_name }}
+                {{ consultation_form.email }}
+                {{ consultation_form.phone_number }}
+            </fieldset>
+            <fieldset class="rounded px-3 mb-5">
+                <legend class="fieldset-label small text-black px-2 w-auto">Project</legend>
+                {{ consultation_form.consultation_idea }}
+            </fieldset>
+        </form>
+    </div>
+
+
+{% endblock %}

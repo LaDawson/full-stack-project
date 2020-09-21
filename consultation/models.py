@@ -9,8 +9,7 @@ class Consultation(models.Model):
     email = models.EmailField(max_length=100, null=False, blank=False)
     phone_number = models.CharField(max_length=30, null=False, blank=False)
     date = models.DateTimeField(auto_now_add=True)
-    consultation_idea = models.CharField(max_length=3000, null=False, blank=False,
-                                         default='Please describe your project in as much detail as possible')
+    consultation_idea = models.CharField(max_length=3000, null=False, blank=False)
     consultation_cost = models.DecimalField(max_digits=5, decimal_places=2, null=False, default=30)
 
     def _consultation_number(self):
