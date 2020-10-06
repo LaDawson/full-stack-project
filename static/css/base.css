@@ -42,7 +42,7 @@ body {
     background: url('/media/background.jpg') no-repeat center center fixed;
     background-size: cover;
     /* Height of image set to 100vh - the navbar height */
-    height: calc(100vh - 56px); 
+    height: calc(100vh - 59px); 
     font-family: 'Patua One', cursive;
 }
 

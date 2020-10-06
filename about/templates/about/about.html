@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="header-container"></div>
+{% endblock %}
+
+{% block content %}
+<div class="background-overlay"></div>
+<div class="col-xl-3 col-lg-4 col-12 left-tab">
+    <div class="container-fluid no-gutters">
+        <div class="row justify-content-center">
+            <img src="../media/lewis.jpg" class="card-img-top logo" alt="...">
+        </div>
+        <div class="row justify-content-center">
+            <div class="personal-info-heading">
+                <h1 class="heading">Personal Info</h1>
+            </div>
+        </div>
+        <hr class="info-divider">
+        <div class="row justify-content-left">
+            <div class="personal-info-container">
+                <div class="info-item">
+                    <h2>Name</h2>
+                    <p>Lewis Dawson</p>
+                </div>
+                <div class="info-item">
+                    <h2>Phone</h2>
+                    <p>07948 179632</p>
+                </div>
+                <div class="info-item">
+                    <h2>Email</h2>
+                    <p>lewisdawsonwebdev@gmail.com</p>
+                </div>
+                <div class="info-item">
+                    <h2>Role</h2>
+                    <p>Full Stack Web Developer</p>
+                </div>
+                <hr class="info-divider">
+                <div class="info-item">
+                    <h2>Skills</h2>
+                    <div class="progress bar1">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">HTML</div>
+                    </div>
+                    <div class="progress">
+                    <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">CSS</div>
+                    </div>
+                    <div class="progress">
+                    <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">JavaScript</div>
+                    </div>
+                    <div class="progress">
+                    <div class="progress-bar progress-bar-striped bg-secondary progress-bar-animated" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">Python</div>
+                    </div>
+                    <div class="progress">
+                    <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">Django</div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="col-xl-9 col-lg-8 right-tab"></div>
+{% endblock %}

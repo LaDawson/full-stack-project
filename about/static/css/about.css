@@ -1,0 +1,56 @@
+body {
+    background-image: none;
+}
+
+.logo {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: 3px 3px 20px black;
+    border: 2px solid white;
+    width: 200px;
+    height: 200px;
+    border-radius: 4%;
+}
+
+.card {
+    border: none;
+}
+
+.page-divider {
+    width: 60%;
+    background-color: rgba(0,0,0, 0.5);
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+
+.left-tab {
+    background-color: #4a4a4f;
+    height: calc(100vh - 59px); 
+    border-right: 2px solid black;
+    box-shadow: 5px 0px 5px black;
+}
+
+.personal-info-container {
+    width: 100%;
+}
+
+.progress {
+    margin-bottom: 20px;
+    width: 100%;
+        border: 2px solid black;
+         height: 40px;
+             box-shadow: 2px 2px 5px black;
+
+
+}
+
+.progress-bar {
+    width: 100%;
+}
+
+.bar1 {
+    margin-top: 30px;
+}
+
+.right-tab
