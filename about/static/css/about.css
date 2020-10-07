@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
 body {
     background-image: none;
 }
@@ -38,19 +40,40 @@ body {
 .progress {
     margin-bottom: 20px;
     width: 100%;
-        border: 2px solid black;
-         height: 40px;
-             box-shadow: 2px 2px 5px black;
+    border: 2px solid black;
+    height: 40px;
+        box-shadow: 2px 2px 5px black;
 
 
 }
 
 .progress-bar {
     width: 100%;
+    transition: background-color .3s ease-in-out;
+    cursor: default;
 }
 
 .bar1 {
     margin-top: 30px;
+}
+
+p {
+    color: white;
+    font-family: 'Bree Serif', serif;
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+
+.prog-bar-text {
+    color: white;
+    font-family: 'Bree Serif', serif;
+    letter-spacing: 1px;
+    font-size: 20px;
+    text-shadow: 2px 2px 2px black
+}
+
+.progress-bar:hover {
+    background-color: rgba(0,0,0, 1) !important;
 }
 
 .right-tab
