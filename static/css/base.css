@@ -46,11 +46,19 @@ body {
     font-family: 'Patua One', cursive;
 }
 
+.homepage-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
 /* Jumbotron Styles */
 .jumbotron {
-    box-shadow: 0 2px 10px 2px black;
     max-width: 1070px;
-    background-color: white;
+    background-color: transparent;
 }
 
 .footer {
@@ -111,10 +119,6 @@ label[for="id_password2"] {
     position: absolute;
     width: 1px;
 }
-/* Stops Checkbox of "remember me" input being 220px */
-input:not([type="checkbox"]) {
-    width:220px
-}
 
 form {
     padding-bottom: 2%;
@@ -165,10 +169,9 @@ form {
     }
 }
 
-/* Removing Background and Border from the Jumbo on Big Screens */
+/* Removing Overlay on Big Screens */
 @media (min-width: 2000px) {
-    .jumbotron {
+    .homepage-overlay {
         background-color: transparent;
-        box-shadow: none;
     }
 }

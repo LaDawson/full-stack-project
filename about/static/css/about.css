@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
 
 body {
-    background: url('../media/about-me-bg.JPG') no-repeat top right fixed;
+    background: url('media/about-me-bg.JPG') no-repeat top right fixed;
     background-size: cover;
     /* Height of image set to 100vh - the navbar height */
     height: calc(100vh - 59px); 

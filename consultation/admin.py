@@ -13,7 +13,7 @@ class ConsulationAdmin(admin.ModelAdmin):
     list_display = ('consultation_number', 'date',
                     'first_name', 'email',)
 
-    ordering = ('date',)
+    ordering = ('-date',)
 
 
 admin.site.register(Consultation, ConsulationAdmin)
