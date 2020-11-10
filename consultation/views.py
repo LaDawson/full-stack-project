@@ -1,14 +1,25 @@
 from django.shortcuts import render, redirect, reverse
 from .forms import ConsultationForm
-
+from django.conf import settings
+import stripe
 
 def consultation(request):
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_secret_key = settings.STRIPE_SECRET_KEY
+    
+    stripe_total = (30 * 100)
+    stripe.api_key = stripe_secret_key
+    intent = stripe.PaymentIntent.create(
+            amount=stripe_total,
+            currency=settings.STRIPE_CURRENCY,
+        )
+
     consultation_form = ConsultationForm()
     template = 'consultation/consultation.html'
     context = {
         'consultation_form': consultation_form,
-        'stripe_public_key': 'pk_test_51H474BHlEZ49am9XV6IE4jYsZpG7Bv7sXUIixaBlIbELEU5dmcWXbONZbKM35fl2ARA6XwBNJPH2LJWvwfRyQa9F00pNOHCLQl',
-        'client_secret': 'test client secret',
+        'stripe_public_key': stripe_public_key,
+        'client_secret': intent.client_secret,
     }
 
     return render(request, template, context)

@@ -46,7 +46,6 @@
 #id_consultation_idea {
     width: 100%;
     min-height: 70px;
-    background-color: transparent;
     overflow-x: hidden;
 }
 
@@ -61,4 +60,8 @@
 
 .consultation-card-warning {
     margin-top: 30px;
+}
+
+.card-errors {
+    margin-top: 10px;
 }
