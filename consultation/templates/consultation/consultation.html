@@ -11,10 +11,13 @@
 
 {% block content %}
 <div class="background-overlay"></div>
-    <div class="container-fluid no-gutters h-100 body-container">
-        <div class="row h-100 justify-content-end align-items-center form-container">
+    <div class="container-fluid no-gutters h-100 consult-container">
+        <div class="row h-100 justify-content-center align-items-center form-container">
             <div class="col my-auto title-box ">
                 <div class="jumbotron">
+                    <div class="row justify-content-center">
+                        <h1 class="consult-title">Consultation</h1>
+                    </div>
                     <form action="{% url 'consultation' %}" method="POST" id="consultation-form">
                         {% csrf_token %}
                         <fieldset class="form_group" id="consultation_user_details_fields">
@@ -22,7 +25,6 @@
                             {{ consultation_form.first_name | as_crispy_field}}
                             {{ consultation_form.last_name | as_crispy_field}}
                             {{ consultation_form.email | as_crispy_field}}
-                            {{ consultation_form.email2 | as_crispy_field}}
                             {{ consultation_form.phone_number | as_crispy_field}}
                         </fieldset>
                         <fieldset class="form-group" id="consultation_idea_field">
@@ -40,8 +42,8 @@
                         </button>
                         <div class="text-danger consultation-card-warning">
                             <p class="card-submit-text">
-                            <i class="fas fa-exclamation"></i>
-                            <span>Your card will be charged £30</span>
+                            <i class="fas fa-exclamation fee-warning"></i>
+                            <span>Your card will be charged a £30 consultation fee</span>
                             </p>
                         </div>
                     </form>

@@ -8,7 +8,7 @@
   background-color: white;
   box-shadow: 2px 2px 4px 0 black;
   -webkit-transition: box-shadow 150ms ease;
-  transition: box-shadow 150ms ease, border 150ms ease;
+  transition: box-shadow 150ms ease, border 150ms ease;    
 }
 
 .StripeElement--focus,
@@ -30,6 +30,34 @@
     overflow: scroll;
 }
 
+#id_first_name,
+#id_last_name,
+#id_email,
+#id_phone_number {
+  float: left;
+  width: 49%;
+}
+
+#id_first_name,
+#id_last_name  {
+    margin-bottom: 5px;
+}
+
+#id_first_name,
+#id_email {
+    margin-right: 2%;
+}
+
+#id_email,
+#id_phone_number {
+    margin-bottom: 30px;
+}
+
+.consult-container {
+    display: flex;
+    justify-content: center;
+}
+
 .background-overlay {
     position: absolute;
     top: 0;
@@ -40,7 +68,9 @@
 }
 
 .form-container {
-    width: 70%;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
 }
 
 #id_consultation_idea {
@@ -64,4 +94,51 @@
 
 .card-errors {
     margin-top: 10px;
+}
+
+.fee-warning {
+    margin-right: 3px;
+}
+
+.consult-title {
+    margin-top: 50px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+#div_id_first_name {
+    margin-bottom: 0;
+}
+
+    .jumbotron {
+    max-width: 2000px;
+    }
+
+/* Media Queries */
+
+@media (max-width: 1600px) {
+    .form-container {
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
+
+@media (max-width: 800px) {
+    #id_first_name,
+    #id_last_name,
+    #id_email,
+    #id_phone_number {
+        float: none;
+        width: 100%;
+        margin: 0;
+    }
+    #div_id_first_name {
+        margin-bottom: 1rem;
+    }
+    .form-container {
+        width: 100%;
+        margin: 0;
+    }
+
 }

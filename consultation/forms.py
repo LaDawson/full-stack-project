@@ -5,7 +5,7 @@ from .models import Consultation
 class ConsultationForm(forms.ModelForm):
     class Meta:
         model = Consultation
-        fields = ('first_name', 'last_name', 'email', 'email2',
+        fields = ('first_name', 'last_name', 'email',
                   'phone_number', 'consultation_idea',)
 
     def __init__(self, *args, **kwargs):
@@ -15,7 +15,6 @@ class ConsultationForm(forms.ModelForm):
             'first_name': 'First Name',
             'last_name': 'Surname',
             'email': 'Email Address',
-            'email2': 'Email Confirmation',
             'phone_number': 'Phone Number',
             'consultation_idea': 'Project Idea/Description'
         }
