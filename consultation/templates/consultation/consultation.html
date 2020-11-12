@@ -15,7 +15,7 @@
         <div class="row h-100 justify-content-end align-items-center form-container">
             <div class="col my-auto title-box ">
                 <div class="jumbotron">
-                    <form action="{% url 'consultation' %}" methods="POST" id="consultation-form">
+                    <form action="{% url 'consultation' %}" method="POST" id="consultation-form">
                         {% csrf_token %}
                         <fieldset class="form_group" id="consultation_user_details_fields">
                             <legend class="fieldset-label">Details</legend>
@@ -34,7 +34,7 @@
                             <div id="card-element"></div>
                             <div class="card-errors" id="card-errors" role="alert"></div>
                         </fieldset>
-                        <button type="submit" class="btn btn-primary consultation-submit" id="submit-button" onclick="inputFields()">
+                        <button type="submit" class="btn btn-primary consultation-submit" id="submit-button"  onclick="inputFields()">
                             <i class="fas fa-paper-plane submit-icon"></i>
                             Submit
                         </button>

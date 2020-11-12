@@ -17,7 +17,14 @@ html {
 .logo-font {
     text-transform: uppercase;
     font-family: 'Lato', sans-serif;
+    font-size: 25px;
 }
+
+.logo-font-lg {
+    text-transform: uppercase;
+    font-family: 'Lato', sans-serif;
+}
+
 
 
 /* ------------------ index.html Styles ------------------ */
@@ -44,6 +51,14 @@ body {
     /* Height of image set to 100vh - the navbar height */
     height: calc(100vh - 59px); 
     font-family: 'Patua One', cursive;
+}
+
+.main-logo {
+    background: url('/media/logo.png') no-repeat center center;
+    background-size: cover;
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
 }
 
 .homepage-overlay {
@@ -174,4 +189,42 @@ form {
     .homepage-overlay {
         background-color: transparent;
     }
+}
+
+/* Toasts Styles */
+
+.msg-container {
+    position: fixed;
+    top: 80px;
+    right: 15px;
+    z-index: 9999999;
+}
+
+.toast-header {
+    cursor: default;
+}
+
+.close-toast {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.border-success,
+.border-danger,
+.border-warning,
+.border-info {
+    transition: box-shadow .2s ease-in-out;
+}
+
+.border-success:hover {
+    box-shadow: 2px 2px 3px green;
+}
+.border-danger:hover {
+    box-shadow: 2px 2px 3px red;
+}
+.border-warning:hover {
+    box-shadow: 2px 2px 3px yellow;
+}
+.border-info:hover {
+    box-shadow: 2px 2px 3px #17a2b8;
 }

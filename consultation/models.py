@@ -13,14 +13,14 @@ class Consultation(models.Model):
     consultation_idea = models.TextField(max_length=3000, null=False, blank=False)
     consultation_cost = models.DecimalField(max_digits=5, decimal_places=2, null=False, default=30)
 
-    def _consultation_number(self):
+    def _generate_consultation_number(self):
         """ Creates a random number using UUID for the consultation """
         return uuid.uuid4().hex.upper()
 
-    def save_consultation_number(self, *args, **kwargs):
+    def save(self, *args, **kwargs):
         """ Saves the uuid as the consultation number """
         if not self.consultation_number:
-            self.consultation_number = self._consultation_number()
+            self.consultation_number = self._generate_consultation_number()
         super().save(*args, **kwargs)
 
     def __str__(self):
