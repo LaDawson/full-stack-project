@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
 {% block page_header %}
     <div class="header-container"></div>
 {% endblock %}
@@ -25,7 +29,7 @@
                     </p> 
                     <hr class="my-4">
                     <p>If you would like to learn more about what I can do, click below.</p>
-                    <a class="btn btn-primary btn-lg" href="{% url 'about' %}" role="button">Learn more</a>
+                    <a class="btn btn-primary btn-lg learn-more-button" href="{% url 'about' %}" role="button">Learn more</a>
                 </div>
             </div>
         </div>

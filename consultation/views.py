@@ -17,7 +17,6 @@ def consultation(request):
             'first_name': request.POST['first_name'],
             'last_name': request.POST['last_name'],
             'email': request.POST['email'],
-            'email2': request.POST['email2'],
             'phone_number': request.POST['phone_number'],
             'consultation_idea': request.POST['consultation_idea'],
             'consultation_number': Consultation.consultation_number,

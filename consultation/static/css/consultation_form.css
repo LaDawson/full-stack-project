@@ -1,3 +1,5 @@
+/* Stripe styles from stripe documentation */
+
 .StripeElement,
 .stripe-style-input {
   box-sizing: border-box;
@@ -26,8 +28,13 @@
     color: #4a4a4f;
 }
 
+/* -------------- Form Styles -------------- */
+
 #id_consultation_idea {
     overflow: scroll;
+    width: 100%;
+    min-height: 70px;
+    overflow-x: hidden;
 }
 
 #id_first_name,
@@ -51,37 +58,6 @@
 #id_email,
 #id_phone_number {
     margin-bottom: 30px;
-}
-
-.consult-container {
-    display: flex;
-    justify-content: center;
-}
-
-.background-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
-}
-
-.form-container {
-    width: 50%;
-    margin-left: 25%;
-    margin-right: 25%;
-}
-
-#id_consultation_idea {
-    width: 100%;
-    min-height: 70px;
-    overflow-x: hidden;
-}
-
-
-.jumbotron {
-    width: 100%;
 }
 
 .consultation-submit {
@@ -110,11 +86,34 @@
     margin-bottom: 0;
 }
 
-    .jumbotron {
-    max-width: 2000px;
-    }
+/* -------------- Page Styles -------------- */
 
-/* Media Queries */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.consult-container {
+    display: flex;
+    justify-content: center;
+}
+
+.form-container {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.jumbotron {
+    width: 100%;
+    max-width: 2000px;
+}
+
+/* -------------- Media Queries -------------- */
 
 @media (max-width: 1600px) {
     .form-container {
@@ -140,5 +139,4 @@
         width: 100%;
         margin: 0;
     }
-
 }
