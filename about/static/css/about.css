@@ -37,9 +37,12 @@ body {
 
 .left-tab {
     background-color: #4a4a4f;
-    height: calc(100vh - 100px); 
     border-right: 2px solid black;
     box-shadow: 5px 0px 5px black;
+}
+
+.left-tab-margin {
+    margin-bottom: 60px;
 }
 
 .personal-info-container {
@@ -82,8 +85,9 @@ body {
     font-size: 20px;
     font-family: 'Bree Serif', serif;
     word-break: break-word;
-    text-align: left;
+    text-align: center;
 }
+
 
 .about-divider {
     width: 70%;
@@ -144,4 +148,35 @@ h1, h2, h3 {
 .row {
     margin-left: 0;
     margin-right: 0;
+}
+
+.info-item {
+    word-wrap: break-word;
+}
+
+@media (max-width: 992px) {
+    .left-tab {
+        border: none;
+        box-shadow: none;
+        background-color: transparent;
+        height: 1000px;
+    }
+
+    .right-tab {
+        padding-top: 150px;
+    }
+    .info-p {
+        color: #4a4a4f;
+        font-size: 15px;
+    }
+    .about-me {
+        font-size: 18px;
+    }
+} 
+
+
+@media (max-width: 1300px) {
+        .about-me-margin {
+        margin-bottom: 80px;
+        }
 }

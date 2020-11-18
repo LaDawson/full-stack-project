@@ -125,7 +125,6 @@ form {
     padding-bottom: 2%;
 }
 
-
 /* Form Buttons + Links */
 button {
     background: none;
@@ -208,6 +207,9 @@ label[for="id_password2"] {
 @media (max-width: 420px) {
     .main-logo {
         display: none;
+    }
+    .title-box {
+        text-align: center;
     }
 }
 
