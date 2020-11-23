@@ -3,11 +3,12 @@ from .models import Consultation
 
 
 class ConsulationAdmin(admin.ModelAdmin):
-    readonly_fields = ('consultation_number', 'date', 'consultation_cost',)
+    readonly_fields = ('consultation_number', 'date', 'consultation_cost'
+                       )
 
     fields = ('consultation_number', 'date', 'email', 'first_name',
               'last_name', 'phone_number', 'consultation_idea',
-              'consultation_cost',
+              'consultation_cost'
               )
 
     list_display = ('consultation_number', 'date',

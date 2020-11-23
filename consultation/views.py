@@ -10,7 +10,6 @@ def consultation(request):
     print("consultation")
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
-
     if request.method == 'POST':
         print("POST request")
         form_data = {
@@ -25,7 +24,8 @@ def consultation(request):
         order_form = ConsultationForm(form_data)
         if order_form.is_valid():
             order = order_form.save()
-            return redirect(reverse('consultation_success', args=[order.consultation_number]))
+            return redirect(reverse('consultation_success',
+                                    args=[order.consultation_number]))
         else:
             messages.error(request, 'There was an error with your form.')
     else:

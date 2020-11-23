@@ -10,7 +10,7 @@ var style = {
         fontSmoothing: "antialiased",
         fontSize: "16px",
         "::placeholder": {
-          color: "#aab7c4"
+          color: "#4a4a4f"
         }
       },
       invalid: {
@@ -50,6 +50,11 @@ form.addEventListener('submit', function(ev) {
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
+            billing_details: {
+                name: $.trim(form.first_name.value),
+                phone: $.trim(form.phone_number.value),
+                email: $.trim(form.email.value)
+            }
         }
     }).then(function(result) {
         if (result.error) {
@@ -68,4 +73,4 @@ form.addEventListener('submit', function(ev) {
             }
         }
     });
-});
+    });
