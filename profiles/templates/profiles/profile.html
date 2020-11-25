@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/profiles.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="header-container"></div>
+{% endblock %}
+
+{% block content %}
+<div class="background-overlay"></div>
+    <div class="container-fluid no-gutters h-100 consult-container">
+        <div class="row h-100 justify-content-center align-items-center form-container">
+            <div class="col my-auto title-box ">
+                <div class="jumbotron">
+                    <div class="row justify-content-center">
+                        <h1 class="consult-title">My Consultations</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

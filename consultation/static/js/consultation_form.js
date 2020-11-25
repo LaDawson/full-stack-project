@@ -2,7 +2,6 @@ function inputFields() {
     var firstName = document.getElementById("id_first_name");
     var lastName = document.getElementById("id_last_name");
     var email = document.getElementById("id_email");
-    var email2 = document.getElementById("id_email2")
     var phone = document.getElementById("id_phone_number");
     var idea = document.getElementById("id_consultation_idea");
 
@@ -25,5 +24,10 @@ function inputFields() {
     if (idea.value == "") {
         idea.style.boxShadow = "1px 1px 2px black";
         idea.style.backgroundColor = "rgba(207, 0, 15, 0.2)";
+    }
+
+    if (email.value == "") {
+        email.style.boxShadow = "1px 1px 2px black";
+        email.style.backgroundColor = "rgba(207, 0, 15, 0.2)";
     }
 }

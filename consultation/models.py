@@ -1,9 +1,10 @@
 import uuid
 from django.db import models
-
+from profiles.models import Profile
 
 class Consultation(models.Model):
     consultation_number = models.CharField(max_length=32, null=False, editable=False)
+    profile = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True, blank=True, related_name="consultations")
     first_name = models.CharField(max_length=20, null=False, blank=False)
     last_name = models.CharField(max_length=20, null=False, blank=False)
     email = models.EmailField(max_length=100, null=False, blank=False, default="")
