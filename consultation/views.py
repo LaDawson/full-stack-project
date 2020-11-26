@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.views.decorators.http import require_POST
 from .forms import ConsultationForm
 from django.conf import settings
 from django.contrib import messages
@@ -6,6 +7,18 @@ from .models import Consultation
 import stripe
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
+
+
+@require_POST
+def cache_consultation_data(request):
+    try:
+        pid = request.POST.get('client_secret').split('_secret')[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(request, 'Sorry, your payment cannot be \
+            processed right now. Please try again later.')
+        return HttpResponse(content=e, status=400)
 
 
 def consultation(request):
@@ -23,11 +36,14 @@ def consultation(request):
             'consultation_number': Consultation.consultation_number,
             'date': Consultation.date
         }
-        order_form = ConsultationForm(form_data)
-        if order_form.is_valid():
-            order = order_form.save()
+        consultation_form = ConsultationForm(form_data)
+        if consultation_form.is_valid():
+            consultation = consultation_form.save(commit=False)
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            consultation.stripe_pid = pid
+            consultation.save()
             return redirect(reverse('consultation_success',
-                                    args=[order.consultation_number]))
+                                    args=[consultation.consultation_number]))
         else:
             messages.error(request, 'There was an error with your form.')
     else:

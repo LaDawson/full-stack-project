@@ -13,6 +13,7 @@ class Consultation(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     consultation_idea = models.TextField(max_length=3000, null=False, blank=False)
     consultation_cost = models.DecimalField(max_digits=5, decimal_places=2, null=False, default=30)
+    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
 
     def _generate_consultation_number(self):
         """ Creates a random number using UUID for the consultation """

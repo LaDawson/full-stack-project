@@ -47,6 +47,15 @@ form.addEventListener('submit', function(ev) {
     ev.preventDefault();
     card.update({ 'disabled': true});
     $('#submit-button').attr('disabled', true);
+
+    var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
+    var postData = {
+        'csrfmiddlewaretoken': csrfToken,
+        'client_secret': clientSecret,
+    };
+    var url = '/consultation/cache_consultation_data/';
+
+    $.post(url, postData).done(function () {
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
@@ -73,4 +82,5 @@ form.addEventListener('submit', function(ev) {
             }
         }
     });
-    });
+    })
+});

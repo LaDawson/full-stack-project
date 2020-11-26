@@ -1,0 +1,19 @@
+Hello {{ consultation.first_name }} {{ consultation.last_name }},
+
+This is a confirmation email for your consultation from The Coding Pen. Your order information is below:
+
+Consultation Number: {{ consultation.consultation_number }}
+Consultation Order Date: {{ consultation.date }}
+Consultation Cost: £30
+
+You will be contacted within 2-3 working days at {{ consultation.email }} to discuss your ideas.
+
+We have your phone number {{ consultation.phone_number }} if we cannot reach you through email.
+
+If you have any questions or issues then feel free to contact us at {{ contact_email }}.
+
+Thank you for your order!
+
+Sincerely,
+
+The Coding Pen

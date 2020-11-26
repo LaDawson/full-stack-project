@@ -1,10 +1,32 @@
 from django.http import HttpResponse
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.conf import settings
+from .models import Consultation
+
 
 
 class StripeWH_Handler:
 
     def __init__(self, request):
         self.request = request
+
+    def _send_confirmation_email(self, consultation):
+        customer_email = consultation.email
+        subject = render_to_string(
+            'confirmation_emails/confirmation_email_subject.txt',
+            {'consultation': consultation})
+        body = render_to_string(
+            'confirmation_emails/confirmation_email_body.txt',
+            {'consultation': consultation,
+             'contact_email': settings.DEFAULT_CONTACT_EMAIL})
+
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_CONTACT_EMAIL,
+            [customer_email]
+        )
 
     def handle_event(self, event):
 
@@ -14,9 +36,20 @@ class StripeWH_Handler:
 
     def handle_payment_intent_succeeded(self, event):
 
+        intent = event.data.object
+        pid = intent.id
+        billing_details = intent.charges.data[0].billing_details
+
+        consultation = Consultation.objects.get(
+            first_name__iexact=billing_details.name,
+            email__iexact=billing_details.email,
+            phone_number__iexact=billing_details.phone,
+            stripe_pid=pid,
+        )
+        self._send_confirmation_email(consultation)
         return HttpResponse(
             content=f'Webhook received: {event["type"]} \
-                Created consultation in webhook',
+                Consultation received, confirmation email sent',
             status=200)
 
     def handle_payment_intent_payment_failed(self, event):

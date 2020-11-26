@@ -9,7 +9,7 @@ def profile(request):
     profile = get_object_or_404(UserProfile, user=request.user)
 
     form = UserProfileForm(instance=profile)
-    consultations = profile.consultation.all()
+    consultations = profile.consultation.all().order_by('-date')
 
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
