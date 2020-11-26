@@ -1,3 +1,58 @@
+/* Stripe styles from stripe documentation */
+
+.stripe-style-input {
+  box-sizing: border-box;
+  height: 40px;
+  padding: 10px 12px;
+  border: 1.5px solid black;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 2px 2px 4px 0 black;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease, border 150ms ease;    
+}
+
+.stripe-style-input:focus,
+.stripe-style-input:active {
+  box-shadow: 0 1px 3px 0 #4a4a4f;
+  border: 1px solid transparent;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+.stripe-style-input::placeholder {
+    color: #4a4a4f;
+}
+
+/* -------------- Form Styles -------------- */
+
+#id_first_name,
+#id_last_name,
+#id_email,
+#id_phone_number {
+  float: left;
+  width: 49%;
+}
+
+#id_first_name,
+#id_last_name  {
+    margin-bottom: 5px;
+}
+
+#id_first_name,
+#id_email {
+    margin-right: 2%;
+}
+
+#id_email,
+#id_phone_number {
+    margin-bottom: 30px;
+}
+
+/* -------------- Page Styles -------------- */
+
 .background-overlay {
     position: fixed;
     top: 0;
@@ -23,6 +78,11 @@
     max-width: 2000px;
 }
 
+.consultation-history {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
 /* -------------- Media Queries -------------- */
 
 @media (max-width: 1600px) {
@@ -34,6 +94,17 @@
 }
 
 @media (max-width: 800px) {
+    #id_first_name,
+    #id_last_name,
+    #id_email,
+    #id_phone_number {
+        float: none;
+        width: 100%;
+        margin: 0;
+    }
+    #div_id_first_name {
+        margin-bottom: 1rem;
+    }
     .form-container {
         width: 100%;
         margin: 0;

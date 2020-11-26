@@ -4,6 +4,8 @@ from django.conf import settings
 from django.contrib import messages
 from .models import Consultation
 import stripe
+from profiles.models import UserProfile
+from profiles.forms import UserProfileForm
 
 
 def consultation(request):
@@ -36,7 +38,20 @@ def consultation(request):
                 currency=settings.STRIPE_CURRENCY,
             )
 
-    consultation_form = ConsultationForm()
+    if request.user.is_authenticated:
+        try:
+            profile = UserProfile.objects.get(user=request.user)
+            consultation_form = ConsultationForm(initial={
+                'first_name': profile.default_first_name,
+                'last_name': profile.default_last_name,
+                'email': profile.default_email,
+                'phone_number': profile.default_phone_number,
+            })
+        except UserProfile.DoesNotExist:
+            consultation_form = ConsultationForm()
+    else:
+        consultation_form = ConsultationForm()
+
     template = 'consultation/consultation.html'
     context = {
         'consultation_form': consultation_form,
@@ -48,13 +63,29 @@ def consultation(request):
 
 
 def consultation_success(request, consultation_number):
-    order = get_object_or_404(Consultation,
+    consultation = get_object_or_404(Consultation,
                               consultation_number=consultation_number)
+
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        consultation.user_profile = profile
+        consultation.save()
+
+    profile_info = {
+        'default_first_name': consultation.first_name,
+        'default_last_name': consultation.last_name,
+        'default_phone_number': consultation.phone_number,
+        'default_email': consultation.email,
+    }
+    user_profile_form = UserProfileForm(profile_info, instance=profile)
+    if user_profile_form.is_valid():
+        user_profile_form.save()
+
     messages.success(request, f'Order successfully processed! \
         Your order number is {consultation_number}.')
     template = 'consultation/consultation_success.html'
     context = {
-        'order': order,
+        'consultation': consultation,
     }
 
     return render(request, template, context)
