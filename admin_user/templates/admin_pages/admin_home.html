@@ -32,7 +32,7 @@
                             {% for consultation in consultations %}
                                 <tr>
                                     <td>
-                                        <a href="{% url 'consultation_history' consultation.consultation_number %}" 
+                                        <a href="{% url 'consultation_history_admin' consultation.consultation_number %}" 
                                         title="{{ consultation.consultation_number }}">
                                             {{ consultation.consultation_number|truncatechars:10 }}
                                         </a>

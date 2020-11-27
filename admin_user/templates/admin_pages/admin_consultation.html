@@ -14,9 +14,9 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h2 class="thank-msg-title">Thank You</h2>
+                <h2 class="thank-msg-title">Consultation for {{ consultation.first_name }} {{ consultation.last_name }}</h2>
                 <hr class="small-hr">
-                <p class="thank-msg">Your order information is below. A confirmation email has been sent to <strong>{{ consultation.email }}</strong>.</p>
+                <p class="thank-msg">A confirmation email was sent to <strong>{{ consultation.email }}</strong>.</p>
             </div>
         </div>
 
@@ -92,9 +92,7 @@
                             </div>
                         </div>
                         <hr>
-                        <a class="btn btn-primary btn-lg learn-more-button" href="{% url 'home' %}" role="button">Home</a>
-
-
+                            <a class="btn btn-primary btn-lg learn-more-button" href="{% url 'admin_page' %}" role="button">Back to Admin</a>
                     </div>
                 </div>
             </div>
