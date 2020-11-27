@@ -16,35 +16,40 @@
 		<div class="col my-auto title-box ">
 			<div class="jumbotron">
 				<div class="row justify-content-center">
-					<h1 class="consult-title">All Consultations</h1>
+					<h1 class="profile-title">
+                        All Consultations
+                        <hr class="small-hr">
+                    </h1>
 				</div>
-				<div class="col-12 table-body-custom table-responsive">
-					<table class="table table-striped">
-						<thead class="table-primary">
-							<tr>
-								<th scope="col">Consultation Number</th>
-								<th scope="col">Email</th>
-								<th scope="col">Date</th>
-								<th scope="col">Cost</th>
-							</tr>
-						</thead>
-						<tbody class="table-body-custom">
-                            {% for consultation in consultations %}
+                <div class="col-12 table-container-padding">
+                    <div class="col-12 table-body-custom table-responsive">
+                        <table class="table table-striped">
+                            <thead class="table-primary">
                                 <tr>
-                                    <td>
-                                        <a href="{% url 'consultation_history_admin' consultation.consultation_number %}" 
-                                        title="{{ consultation.consultation_number }}">
-                                            {{ consultation.consultation_number|truncatechars:10 }}
-                                        </a>
-                                    </td>
-                                    <td>{{ consultation.email }}</td>
-                                    <td>{{ consultation.date }}</td>
-                                    <td>£30</td>
+                                    <th scope="col">Consultation Number</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Cost</th>
                                 </tr>
-                            {% endfor %}
-						</tbody>
-					</table>
-				</div>
+                            </thead>
+                            <tbody>
+                                {% for consultation in consultations %}
+                                    <tr>
+                                        <td>
+                                            <a href="{% url 'consultation_history_admin' consultation.consultation_number %}" 
+                                            title="{{ consultation.consultation_number }}">
+                                                {{ consultation.consultation_number|truncatechars:10 }}
+                                            </a>
+                                        </td>
+                                        <td>{{ consultation.email }}</td>
+                                        <td>{{ consultation.date }}</td>
+                                        <td>£30</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 			</div>
 		</div>
 	</div>

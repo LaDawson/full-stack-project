@@ -24,11 +24,11 @@ def cache_consultation_data(request):
 
 @login_required
 def consultation(request):
-    print("consultation")
+
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
+
     if request.method == 'POST':
-        print("POST request")
         form_data = {
             'first_name': request.POST['first_name'],
             'last_name': request.POST['last_name'],
@@ -38,7 +38,9 @@ def consultation(request):
             'consultation_number': Consultation.consultation_number,
             'date': Consultation.date
         }
+
         consultation_form = ConsultationForm(form_data)
+
         if consultation_form.is_valid():
             consultation = consultation_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
@@ -81,10 +83,12 @@ def consultation(request):
 
 
 def consultation_success(request, consultation_number):
+
     consultation = get_object_or_404(Consultation,
                               consultation_number=consultation_number)
 
     if request.user.is_authenticated:
+
         profile = UserProfile.objects.get(user=request.user)
         consultation.user_profile = profile
         consultation.save()
@@ -95,12 +99,15 @@ def consultation_success(request, consultation_number):
         'default_phone_number': consultation.phone_number,
         'default_email': consultation.email,
     }
+
     user_profile_form = UserProfileForm(profile_info, instance=profile)
+
     if user_profile_form.is_valid():
         user_profile_form.save()
 
     messages.success(request, f'Order successfully processed! \
         Your order number is {consultation_number}.')
+        
     template = 'consultation/consultation_success.html'
     context = {
         'consultation': consultation,

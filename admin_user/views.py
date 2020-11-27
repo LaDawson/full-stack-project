@@ -31,8 +31,8 @@ def consultation_history_admin(request, consultation_number):
                                      consultation_number=consultation_number)
 
     messages.info(request, (
-        f'This is a past confirmation for order {consultation_number}.'
-        'A confirmation email was sent on the order date.'
+        f'This is a past confirmation for order {consultation_number}. '
+        'An email was sent on the order date.'
     ))
 
     template = 'admin_pages/admin_consultation.html'

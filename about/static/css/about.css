@@ -1,12 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
 
+
+/* -------------- Page Styles -------------- */
+
 body {
     background: url('media/about-me-bg.JPG') no-repeat top right fixed;
     background-size: cover;
-    /* Height of image set to 100vh - the navbar height */
     height: calc(100vh - 59px); 
     font-family: 'Patua One', cursive;
 }
+h1, h2, h3 {
+    cursor: default;
+}
+.page-row {
+    height: calc(100vh - 100px);
+}
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+.info-item {
+    word-wrap: break-word;
+}
+
+
+/* -------------- Personal Info Section -------------- */
 
 .logo {
     margin-top: 50px;
@@ -18,39 +36,22 @@ body {
     border-radius: 4%;
     transition: box-shadow .4s ease-in-out;
 }
-
 .logo:hover {
     box-shadow: 3px 3px 10px black;
 }
-
-.card {
-    border: none;
-}
-
-.page-divider {
-    width: 60%;
-    background-color: rgba(0,0,0, 0.5);
-    margin-top: 30px;
-    margin-bottom: 10px;
-}
-
-
 .left-tab {
     background-color: #4a4a4f;
     border-right: 2px solid black;
     box-shadow: 5px 0px 5px black;
 }
-
 .left-tab-margin {
     margin-bottom: 60px;
 }
-
 .personal-info-container {
     width: 100%;
     padding-left: 10px;
     padding-right: 10px;
 }
-
 .progress {
     margin-bottom: 20px;
     width: 100%;
@@ -58,72 +59,11 @@ body {
     height: 40px;
     box-shadow: 2px 2px 5px black;
 }
-
 .progress-bar {
     width: 100%;
     transition: background-color .3s ease-in-out;
     cursor: default;
 }
-
-.bar1 {
-    margin-top: 30px;
-}
-
-.info-p {
-    color: white;
-    font-family: 'Bree Serif', serif;
-    letter-spacing: 1px;
-    font-size: 20px;
-}
-
-.about-title {
-    margin-top: 50px;
-    text-transform: uppercase;
-}
-
-.about-me {
-    font-size: 20px;
-    font-family: 'Bree Serif', serif;
-    word-break: break-word;
-    text-align: center;
-}
-
-
-.about-divider {
-    width: 70%;
-    background-color: black;
-    border: none;
-    height: 2px;
-    box-shadow: 2px 2px 10px black;
-}
-
-.about-divider-1 {
-    width: 30%;
-    background-color: black;
-    border: none;
-    height: 2px;
-    box-shadow: 2px 2px 10px black;
-}
-
-.what-i-do {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 40px;
-}
-
-.about-icon {
-    font-size: 28px;
-    margin-right: 20px;
-}
-
-.title-container {
-    width: 80%;
-}
-
-h1, h2, h3 {
-    cursor: default;
-}
-
 .prog-bar-text {
     color: white;
     font-family: 'Bree Serif', serif;
@@ -131,28 +71,65 @@ h1, h2, h3 {
     font-size: 20px;
     text-shadow: 2px 2px 2px black
 }
-
 .progress-bar:hover {
     background-color: rgba(0,0,0, 1) !important;
 }
+.bar1 {
+    margin-top: 30px;
+}
+
+
+/* -------------- About Me Section -------------- */
 
 .right-tab {
     height: calc(100vh - 100px);
     padding-right: 0;
 }
-
-.page-row {
-    height: calc(100vh - 100px);
+.info-p {
+    color: white;
+    font-family: 'Bree Serif', serif;
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+.about-title {
+    margin-top: 50px;
+    text-transform: uppercase;
+}
+.about-me {
+    font-size: 20px;
+    font-family: 'Bree Serif', serif;
+    word-break: break-word;
+    text-align: center;
+}
+.about-divider {
+    width: 70%;
+    background-color: black;
+    border: none;
+    height: 2px;
+    box-shadow: 2px 2px 10px black;
+}
+.about-divider-1 {
+    width: 30%;
+    background-color: black;
+    border: none;
+    height: 2px;
+    box-shadow: 2px 2px 10px black;
+}
+.what-i-do {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.about-icon {
+    font-size: 28px;
+    margin-right: 20px;
+}
+.title-container {
+    width: 80%;
 }
 
-.row {
-    margin-left: 0;
-    margin-right: 0;
-}
 
-.info-item {
-    word-wrap: break-word;
-}
+/* -------------- Media Queries Section -------------- */
 
 @media (max-width: 992px) {
     .left-tab {
@@ -174,7 +151,6 @@ h1, h2, h3 {
     }
 } 
 
-
 @media (max-width: 1300px) {
         .about-me-margin {
         margin-bottom: 80px;
@@ -182,11 +158,11 @@ h1, h2, h3 {
 }
 
 @media (max-width: 380px) {
-.header-container {
-    margin-bottom: 0;
+    .header-container {
+        margin-bottom: 0;
 }}
 
 @media (max-height: 590px) {
-.header-container {
-    margin-bottom: 0; 
+    .header-container {
+        margin-bottom: 0; 
 }}

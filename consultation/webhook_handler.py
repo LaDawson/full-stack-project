@@ -5,13 +5,13 @@ from django.conf import settings
 from .models import Consultation
 
 
-
 class StripeWH_Handler:
 
     def __init__(self, request):
         self.request = request
 
     def _send_confirmation_email(self, consultation):
+
         customer_email = consultation.email
         subject = render_to_string(
             'confirmation_emails/confirmation_email_subject.txt',
@@ -46,6 +46,7 @@ class StripeWH_Handler:
             phone_number__iexact=billing_details.phone,
             stripe_pid=pid,
         )
+        
         self._send_confirmation_email(consultation)
         return HttpResponse(
             content=f'Webhook received: {event["type"]} \

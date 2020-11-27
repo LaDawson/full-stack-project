@@ -11,49 +11,57 @@
 
 {% block content %}
 <div class="background-overlay"></div>
-    <div class="container-fluid no-gutters h-100 consult-container">
-        <div class="row h-100 justify-content-center align-items-center form-container">
-            <div class="col my-auto title-box ">
-                <div class="jumbotron">
-                    <div class="row justify-content-center">
-                        <h1 class="consult-title">Consultation</h1>
-                    </div>
-                    <form action="{% url 'consultation' %}" method="POST" id="consultation-form">
-                        {% csrf_token %}
-                        <fieldset class="form_group" id="consultation_user_details_fields">
-                            <legend class="fieldset-label">Details</legend>
-                            {{ consultation_form.first_name | as_crispy_field}}
-                            {{ consultation_form.last_name | as_crispy_field}}
-                            {{ consultation_form.email | as_crispy_field}}
-                            {{ consultation_form.phone_number | as_crispy_field}}
-                        </fieldset>
-                        <fieldset class="form-group" id="consultation_idea_field">
-                            <legend class="fieldset-label">Project Description</legend> 
-                            {{ consultation_form.consultation_idea | as_crispy_field }}
-                        </fieldset>
-                        <fieldset class="form_group" id="consultation_payment_fields">
-                            <legend class="fieldset-label">Payment</legend>
-                            <div id="card-element"></div>
-                            <div class="card-errors" id="card-errors" role="alert"></div>
-                            <!-- Pass the client secret to the view so we can get the payment intent id -->
-                        <input type="hidden" value="{{ client_secret }}" name="client_secret">
-                        </fieldset>
-                        
-                        <button type="submit" class="btn btn-primary consultation-submit" id="submit-button"  onclick="inputFields()">
-                            <i class="fas fa-paper-plane submit-icon"></i>
-                            Submit
-                        </button>
-                        <div class="text-danger consultation-card-warning">
-                            <p class="card-submit-text">
-                            <i class="fas fa-exclamation fee-warning"></i>
-                            <span>Your card will be charged a £30 consultation fee</span>
-                            </p>
-                        </div>
-                    </form>
+<div class="container-fluid no-gutters h-100 consult-container">
+    <div class="row h-100 justify-content-center align-items-center form-container">
+        <div class="col my-auto title-box ">
+            <div class="jumbotron">
+                <div class="row justify-content-center">
+                    <h1 class="consult-title">
+                        Consultation
+                    </h1>
                 </div>
+                <form action="{% url 'consultation' %}" method="POST" id="consultation-form">
+                    {% csrf_token %}
+                    <fieldset class="form_group" id="consultation_user_details_fields">
+                        <legend class="fieldset-label">
+                            Details
+                        </legend>
+                        {{ consultation_form.first_name | as_crispy_field}}
+                        {{ consultation_form.last_name | as_crispy_field}}
+                        {{ consultation_form.email | as_crispy_field}}
+                        {{ consultation_form.phone_number | as_crispy_field}}
+                    </fieldset>
+                    <fieldset class="form-group" id="consultation_idea_field">
+                        <legend class="fieldset-label">
+                            Project Description
+                        </legend> 
+                        {{ consultation_form.consultation_idea | as_crispy_field }}
+                    </fieldset>
+                    <fieldset class="form_group" id="consultation_payment_fields">
+                        <legend class="fieldset-label">
+                            Payment
+                        </legend>
+                        <div id="card-element"></div>
+                        <div class="card-errors" id="card-errors" role="alert"></div>
+                        <input type="hidden" value="{{ client_secret }}" name="client_secret">
+                    </fieldset>
+                    <button type="submit" class="btn btn-primary consultation-submit" id="submit-button"  onclick="inputFields()">
+                        <i class="fas fa-paper-plane submit-icon"></i>
+                        Submit
+                    </button>
+                    <div class="text-danger consultation-card-warning">
+                        <p class="card-submit-text">
+                            <i class="fas fa-exclamation fee-warning"></i>
+                            <span>
+                                Your card will be charged a £30 consultation fee
+                            </span>
+                        </p>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 {% endblock %}
 
 {% block extra_js %}

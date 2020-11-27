@@ -16,17 +16,24 @@
 		<div class="col my-auto title-box ">
 			<div class="jumbotron">
 				<div class="row justify-content-center">
-					<h1 class="consult-title">Consultation</h1>
+					<h1 class="profile-title">
+                        My Profile
+                        <hr class="small-hr">
+                    </h1>
 				</div>
-				<form class="" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                
+				<form action="{% url 'profile' %}" method="POST" id="profile-update-form">
 					{% csrf_token %}
 					{{ form|crispy }}
-					<button class="btn btn-primary btn-lg ">Update Information</button>
+					<button class="btn btn-primary btn-lg update-button-margin">
+                        Update Information
+                    </button>
 				</form>
 				<hr>
-				<div class="col-12">
-					<table class="table">
-						<thead>
+				<div class="col-12 table-container-padding">
+					<div class="col-12 table-body-custom table-responsive">
+					<table class="table table-striped">
+						<thead class="table-primary">
 							<tr>
 								<th scope="col">Consultation Number</th>
 								<th scope="col">Email</th>
@@ -38,7 +45,7 @@
                             {% for consultation in consultations %}
                                 <tr>
                                     <td>
-                                        <a href="{% url 'consultation_history' consultation.consultation_number %}" 
+                                        <a href="{% url 'consultation_history_admin' consultation.consultation_number %}" 
                                         title="{{ consultation.consultation_number }}">
                                             {{ consultation.consultation_number|truncatechars:10 }}
                                         </a>

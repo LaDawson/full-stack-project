@@ -11,92 +11,121 @@
 
 {% block content %}
 <div class="background-overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h2 class="thank-msg-title">Thank You</h2>
-                <hr class="small-hr">
-                <p class="thank-msg">Your order information is below. A confirmation email has been sent to <strong>{{ consultation.email }}</strong>.</p>
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="thank-msg-title">
+                Thank You
+            </h2>
+            <hr class="small-hr">
+            <p class="thank-msg">
+                Your order information is below. 
+                A confirmation email has been sent to 
+                <strong>{{ consultation.email }}</strong>.
+            </p>
         </div>
-
-        <div class="row info-container">
-            <div class="col-12 col-lg-7">
-                    <div class="confirmation-container">
-                        <div class="row">
-                            <div class="col order-title-info">
-                                <p class="info-titles">Order Info:</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-md-4">
-                                <p class="order-cats">Order Number</p>
-                            </div>
-                            <div class="col-12 col-md-8">
-                                <p class="order-info">{{ consultation.consultation_number }}</p>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-12 col-md-4">
-                                <p>Order Date</p>
-                            </div>
-                            <div class="col-12 col-md-8">
-                                <p class="order-info">{{ consultation.date }}</p>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col order-title-info">
-                                <p class="info-titles">Details:</p>
-                            </div>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col-12 col-md-4">
-                                <p>Name</p>
-                            </div>
-                            <div class="col-12 col-md-8">
-                                <p class="order-info">{{ consultation.first_name }} {{ consultation.last_name }}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-md-4">
-                                <p>Email</p>
-                            </div>
-                            <div class="col-12 col-md-8">
-                                <p class="order-info">{{ consultation.email }}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-md-4">
-                                <p>Phone Number</p>
-                            </div>
-                            <div class="col-12 col-md-8">
-                                <p class="order-info">{{ consultation.phone_number }}</p>
-                            </div>
-                        </div>
-                        <hr>
-
-                        <div class="row">
-                            <div class="col order-title-info">
-                                <p class="info-titles">Billing Info:</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-md-4">
-                                <p>Consultation Cost</p>
-                            </div>
-                            <div class="col-12 col-md-8">
-                                <p class="order-info">You have been charged $30</p>
-                            </div>
-                        </div>
-                        <hr>
-                        <a class="btn btn-primary btn-lg learn-more-button" href="{% url 'home' %}" role="button">Home</a>
-
-
+    </div>
+    <div class="row info-container">
+        <div class="col-12 col-lg-7">
+            <div class="confirmation-container">
+                <div class="row">
+                    <div class="col order-title-info">
+                        <p class="info-titles">
+                            Order Info:
+                        </p>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p class="order-cats">
+                            Order Number
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <p class="order-info">
+                            {{ consultation.consultation_number }}
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p>
+                            Order Date
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <p class="order-info">
+                            {{ consultation.date }}
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col order-title-info">
+                        <p class="info-titles">
+                            Details:
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p>
+                            Name
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <p class="order-info">
+                            {{ consultation.first_name }} {{ consultation.last_name }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p>
+                            Email
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <p class="order-info">
+                            {{ consultation.email }}
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p>
+                            Phone Number</p>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <p class="order-info">
+                            {{ consultation.phone_number }}
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col order-title-info">
+                        <p class="info-titles">
+                            Billing Info:
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p>
+                            Consultation Cost</p>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <p class="order-info">
+                            You have been charged $30
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <a class="btn btn-primary btn-lg learn-more-button" href="{% url 'home' %}" role="button">
+                    Home
+                </a>
             </div>
         </div>
+    </div>
+</div>
 {% endblock %}

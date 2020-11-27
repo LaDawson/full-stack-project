@@ -6,29 +6,31 @@
 {% endblock %}
 
 {% block content %}
-    <div class="homepage-overlay"></div>
-    <div class="container-fluid no-gutters h-100 body-container">
-        <div class="row h-100 justify-content-end align-items-center">
-            <div class="col my-auto title-box">
-                <!-- Page Title -->
-                <!-- Card from Bootstrap -->
-                <div class="jumbotron">
-                {% if request.user.is_authenticated %}
-                    <h1 class="display-4 logo-font-lg">Welcome {{ user.username }}</h1>
-                {% else %}
-                    <h1 class="display-4 logo-font-lg">Welcome</h1>
-                {% endif %}
+<div class="homepage-overlay"></div>
+<div class="container-fluid no-gutters h-100 body-container">
+    <div class="row h-100 justify-content-end align-items-center">
+        <div class="col my-auto title-box">
+            <!-- Page Title -->
+            <!-- Card from Bootstrap -->
+            <div class="jumbotron">
+                <h1 class="display-4 logo-font-lg">
+                    Welcome
+                </h1>
+            <hr class="my-4">
+                <p class="lead">
+                    My name is Lewis, I am a web developer that has experience developing the front end and back end aspects of websites. 
+                    With this knowledge I can help you create anything from a small startup site for a new business to a fully functional eCommerce store.
+                </p> 
                 <hr class="my-4">
-                    <p class="lead">
-                        My name is Lewis, I am a web developer that has experience developing the front end and back end aspects of websites. 
-                        With this knowledge I can help you create anything from a small startup site for a new business to a fully functional eCommerce store.
-                    </p> 
-                    <hr class="my-4">
-                    <p>If you would like to learn more about what I can do, click below.</p>
-                    <a class="btn btn-primary btn-lg learn-more-button" href="{% url 'about' %}" role="button">Learn more</a>
-                </div>
+                <p>
+                    If you would like to book a consultation, please make an account or sign in if you already have one.<br>
+                    To learn more about what I can do, click below.
+                </p>
+                <a class="btn btn-primary btn-lg learn-more-button" href="{% url 'about' %}" role="button">
+                    Learn more
+                </a>
             </div>
         </div>
     </div>
-
+</div>
 {% endblock %}

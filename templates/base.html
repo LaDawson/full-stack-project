@@ -1,5 +1,4 @@
 {% load static %}
-
 <!doctype html>
 <html lang="en">
 <!-- Using Bootstrap Starter Template -->
@@ -54,8 +53,7 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse text-right flex-grow-1" id="navbarNavAltMarkup">
-                            <div class="navbar-nav ml-auto flex-nowrap">
-                                
+                            <div class="navbar-nav ml-auto flex-nowrap">  
                                 <ul class="navbar-nav mr-auto">
                                     <li class="nav-item">
                                         <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
@@ -63,12 +61,9 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="{% url 'about' %}">About</a>
                                     </li>
-
-                                    {% if request.user.is_authenticated %}
                                     <li class="nav-item">
                                         <a class="nav-link"  href="{% url 'consultation' %}">Consultation</a>
                                     </li>
-                                    {% endif %}
                                     {% if request.user.is_authenticated %}
                                         {% if request.user.is_superuser %}
                                             <li class="nav-item">
@@ -80,7 +75,7 @@
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             {% if request.user.is_authenticated %}
-                                                <a class="dropdown-item" href="{% url 'profile' %}">My Orders</a>
+                                                <a class="dropdown-item" href="{% url 'profile' %}">My Profile</a>
                                                 <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
                                             {% else %}
                                                 <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
@@ -88,9 +83,7 @@
                                             {% endif %}
                                         </div>
                                     </li>
-                                    
                                 </ul>
-
                             </div>
                         </div>
                     </nav>
@@ -106,6 +99,7 @@
 
         {% if messages %}
             <div class="msg-container">
+                <!-- For Toasts from bootstrap -->
                 {% for message in messages %}
                     {% with message.level as level %}
                         {% if level == 40 %}

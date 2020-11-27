@@ -16,7 +16,7 @@ class UserProfileForm(forms.ModelForm):
             'default_email': 'Email Address',
             'default_phone_number': 'Phone Number',
         }
-        self.fields['default_email'].widget.attrs['autofocus'] = True
+        self.fields['default_first_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             self.fields[field].label = False
             self.fields[field].widget.attrs['placeholder'] = placeholders[field]

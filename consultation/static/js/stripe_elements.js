@@ -3,6 +3,8 @@ var clientSecret = $('#id_client_secret').text().slice(1, -1);
 var stripe = Stripe(stripePublicKey);
 var elements = stripe.elements();
 
+// Styles from Stripe Documentation
+
 var style = {
       base: {
         color: "#000",
@@ -39,7 +41,7 @@ card.addEventListener('change', function (event) {
     }
 })
 
-// Handle form submit
+// Form submit
 
 var form = document.getElementById('consultation-form');
 

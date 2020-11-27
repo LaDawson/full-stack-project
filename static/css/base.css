@@ -8,7 +8,38 @@
     width: 1.5rem;
 }
 
-/* Title Styles */
+
+
+
+/* -------------- Page Styles -------------- */
+
+html {
+    height: 100%
+}
+.body-container {
+    display: flex; justify-content: flex-end;
+}
+.header-container {
+    padding-top: 59px;
+}
+.jumbotron {
+    max-width: 1070px;
+    background-color: transparent;
+}
+.footer {
+    box-shadow: 0 -2px 5px black;
+}
+.form-container {
+    justify-content: center;
+    display: flex;
+}
+body {
+    background: url('/media/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    /* Height of image set to 100vh - the navbar height */
+    height: calc(100vh - 59px); 
+    font-family: 'Patua One', cursive;
+}
 .logo-font {
     text-transform: uppercase;
     font-family: 'Lato', sans-serif;
@@ -19,71 +50,25 @@
     font-family: 'Lato', sans-serif;
 }
 
-/* Homepage Button */
-.learn-more-button {
-    margin-bottom: 20px;
-}
-
-/* -------------- Layout Styles -------------- */
-
-html {
-    height: 100%
-}
-
-.body-container {
-    display: flex; justify-content: flex-end;
-}
-
-.header-container {
-    padding-top: 59px;
-}
-
-.jumbotron {
-    max-width: 1070px;
-    background-color: transparent;
-}
-
-.footer {
-    box-shadow: 0 -2px 5px black;
-}
-
-.form-container {
-    justify-content: center;
-    display: flex;
-}
 
 /* -------------- Nav Bar Styles -------------- */
 
 .navbar {
     box-shadow: 0 5px 10px 2px black;
 }
-
 .navbar-toggler {
     outline: none !important;
     box-shadow: none !important;
     border: none;
 }
-
 .dropdown-item {
     padding: 0;
     padding-left: 10px;
 }
-
 .dropdown-menu {
     box-shadow: 2px 2px 5px black;
     border: 1px solid black;
 }
-
-/* Background Image */
-body {
-    background: url('/media/background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    /* Height of image set to 100vh - the navbar height */
-    height: calc(100vh - 59px); 
-    font-family: 'Patua One', cursive;
-}
-
-/* Nav Logo */
 .main-logo {
     background: url('/media/logo.png') no-repeat center center;
     background-size: cover;
@@ -91,8 +76,20 @@ body {
     width: 40px;
     margin-right: 10px;
 }
+button {
+    background: none;
+    border: none;
+}
+.btn-outline-black {
+    border: 2px solid black;
+}
+input {
+    border: 1px solid black;
+}
 
-/* White Background Overlay */
+
+/* -------------- Index.html -------------- */
+
 .homepage-overlay {
     position: fixed;
     top: 0;
@@ -101,6 +98,10 @@ body {
     width: 100%;
     background-color: rgba(255, 255, 255, 0.8);
 }
+.learn-more-button {
+    margin-bottom: 20px;
+}
+
 
 /* -------------- Allauth Templates -------------- */
 
@@ -127,21 +128,6 @@ form {
     padding-bottom: 2%;
 }
 
-/* Form Buttons + Links */
-button {
-    background: none;
-    border: none;
-}
-.btn-outline-black {
-    border: 2px solid black;
-}
-
-/* To make reset password input match sizes of other forms */
-
-input {
-    border: 1px solid black;
-}
-
 /* Removing Labels from Allauth Forms */
 label[for="id_login"],
 label[for="id_password"],
@@ -160,109 +146,6 @@ label[for="id_password2"] {
     width: 1px;
 }
 
-/* -------------- Media Queries -------------- */
-
-/* Making the Allauth forms bigger on smaller screens */
-@media (max-width: 1000px) {
-    .row-size-form {
-        width: 80%;
-    }
-}
-@media (max-width: 500px) {
-    .row-size-form {
-        width: 100%;
-    }
-}
-
-@media (max-width: 500px) {
-    input {
-        width: 100%;
-    }
-    input#id_email {
-        width: 100%;
-    }
-}
-
-@media (max-width: 420px) {
-    .title-box-allauth {
-        text-align: center;
-        padding-bottom: 100px;
-        padding-top: 100px;
-    }
-}
-
-/* Pushing Page Below NavBar on Smaller Screens */
-@media (max-width: 380px) {
-    .header-container {
-        margin-bottom: 30px;
-    }
-}
-@media (max-width: 290px) {
-    .header-container {
-        margin-bottom: 60px;
-    }
-}
-@media (max-height: 590px) {
-    .header-container {
-        margin-bottom: 59px;
-    }
-}
-
-/* Adding Margin to Jumbo on Large Screens */
-@media (min-width: 2000px) {
-    .jumbotron {
-        margin-right: 100px;
-    }
-}
-
-/* Centering Jumbo on Smaller Screens */
-@media (max-width: 2000px) {
-    .body-container {
-        justify-content: center;
-    }
-}
-
-/* Removing Overlay on Big Screens */
-@media (min-width: 2000px) {
-    .homepage-overlay {
-        background-color: transparent;
-    }
-}
-/* Removing Nav Logo on Small Screens */
-@media (max-width: 420px) {
-    .main-logo {
-        display: none;
-    }
-    .title-box {
-        text-align: center;
-    }
-}
-
-/* Navbar Dropdown Styles */
-@media (max-width: 992px) {
-.navbar-collapse {
-    justify-content: end;
-    display: flex;
-    margin-top: 10px;
-    padding: 4px 12px;
-    }
-}    
-@media (max-width: 990px) {
-    .navbar-collapse {
-    border-top: 2px solid white;
-    }
-    .dropdown-menu.show {
-        background-color: transparent;
-        border: none;
-        text-align: end;
-        border-radius: 0;
-        padding: 0;
-        box-shadow: none;
-    }
-    .dropdown-item {
-        color: white;
-    }
-}
 
 /* -------------- Toasts Styles -------------- */
 
@@ -297,4 +180,115 @@ label[for="id_password2"] {
 }
 .border-info:hover {
     box-shadow: 2px 2px 3px #17a2b8;
+}
+
+
+/* -------------- Media Queries -------------- */
+
+/* Making the Allauth forms bigger on smaller screens */
+@media (max-width: 1000px) {
+    .row-size-form {
+        width: 80%;
+    }
+}
+
+@media (max-width: 500px) {
+    .row-size-form {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    input {
+        width: 100%;
+    }
+    input#id_email {
+        width: 100%;
+    }
+}
+
+@media (max-width: 420px) {
+    .title-box-allauth {
+        text-align: center;
+        padding-bottom: 100px;
+        padding-top: 100px;
+    }
+}
+
+
+/* Pushing Page Below NavBar on Smaller Screens */
+@media (max-width: 380px) {
+    .header-container {
+        margin-bottom: 30px;
+    }
+}
+@media (max-width: 290px) {
+    .header-container {
+        margin-bottom: 60px;
+    }
+}
+@media (max-height: 590px) {
+    .header-container {
+        margin-bottom: 59px;
+    }
+}
+
+
+/* Adding Margin to Jumbo on Large Screens */
+@media (min-width: 2000px) {
+    .jumbotron {
+        margin-right: 100px;
+    }
+}
+
+
+/* Centering Jumbo on Smaller Screens */
+@media (max-width: 2000px) {
+    .body-container {
+        justify-content: center;
+    }
+}
+
+
+/* Removing Overlay on Big Screens */
+@media (min-width: 2000px) {
+    .homepage-overlay {
+        background-color: transparent;
+    }
+}
+
+/* Removing Nav Logo on Small Screens */
+@media (max-width: 420px) {
+    .main-logo {
+        display: none;
+    }
+    .title-box {
+        text-align: center;
+    }
+}
+
+/* Navbar Dropdown Styles */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        justify-content: end;
+        display: flex;
+        margin-top: 10px;
+        padding: 4px 12px;
+    }
+}    
+@media (max-width: 990px) {
+    .navbar-collapse {
+        border-top: 2px solid white;
+    }
+    .dropdown-menu.show {
+        background-color: transparent;
+        border: none;
+        text-align: end;
+        border-radius: 0;
+        padding: 0;
+        box-shadow: none;
+    }
+    .dropdown-item {
+        color: white;
+    }
 }

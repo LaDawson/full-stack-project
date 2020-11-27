@@ -1,3 +1,5 @@
+/* -------------- Page Styles -------------- */
+
 .background-overlay {
     position: absolute;
     top: 0;
@@ -6,41 +8,37 @@
     width: 100%;
     background-color: rgba(255, 255, 255, 1);
 }
-
 hr {
     border: 1px solid black;
     background-color: black;
 }
-
 .small-hr {
     width: 30%;
     margin-top: 30px;
     margin-bottom: 30px;
 }
 
+
+/* -------------- Confirmation Styles -------------- */
+
 .thank-msg-title {
     text-align: center;
     margin-top: 100px;
 }
-
 .thank-msg {
     text-align: center;
     margin-bottom: 50px;
 }
-
 .info-container {
     justify-content: center;
 }
-
 .order-title-info {
     margin-bottom: 15px;
 }
-
 .info-titles {
     font-size: 12.8px;
     color: grey;
 }
-
 .order-info {
     text-align: right;
 }
