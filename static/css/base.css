@@ -114,6 +114,8 @@ body {
     width: 90%;
     text-align: center;
     margin: auto;
+    margin-top: 20px;
+    padding-bottom: 20px;
 }
 .row-size-form {
     width: 50%
@@ -132,6 +134,12 @@ button {
 }
 .btn-outline-black {
     border: 2px solid black;
+}
+
+/* To make reset password input match sizes of other forms */
+
+input {
+    border: 1px solid black;
 }
 
 /* Removing Labels from Allauth Forms */
@@ -160,9 +168,26 @@ label[for="id_password2"] {
         width: 80%;
     }
 }
-@media (max-width: 300px) {
+@media (max-width: 500px) {
     .row-size-form {
-        width: 95%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    input {
+        width: 100%;
+    }
+    input#id_email {
+        width: 100%;
+    }
+}
+
+@media (max-width: 420px) {
+    .title-box-allauth {
+        text-align: center;
+        padding-bottom: 100px;
+        padding-top: 100px;
     }
 }
 
