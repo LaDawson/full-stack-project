@@ -9,8 +9,6 @@
 }
 
 
-
-
 /* -------------- Page Styles -------------- */
 
 html {
@@ -96,7 +94,7 @@ input {
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
 }
 .learn-more-button {
     margin-bottom: 20px;
@@ -127,6 +125,15 @@ input {
 form {
     padding-bottom: 2%;
 }
+#id_remember {
+    width: 12.67px;
+}
+input[type=text],
+input[type=password],
+input[type=number],
+input[type=email] {
+    padding-left: 5px !important;
+}
 
 /* Removing Labels from Allauth Forms */
 label[for="id_login"],
@@ -145,14 +152,18 @@ label[for="id_password2"] {
     position: absolute;
     width: 1px;
 }
+.errorlist {
+    list-style: none;
+    padding-left: 0;
+}
 
 
 /* -------------- Toasts Styles -------------- */
 
 .msg-container {
     position: fixed;
-    top: 90px;
-    right: 20px;
+    top: 70px;
+    right: 5px;
     z-index: 9999999;
 }
 .toast-header {

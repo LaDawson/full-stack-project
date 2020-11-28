@@ -111,6 +111,8 @@ def consultation_success(request, consultation_number):
     template = 'consultation/consultation_success.html'
     context = {
         'consultation': consultation,
+        'from_profile': False,
+        'from_admin': False,
     }
 
     return render(request, template, context)

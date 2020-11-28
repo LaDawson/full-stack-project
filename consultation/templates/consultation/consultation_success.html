@@ -121,9 +121,15 @@
                     </div>
                 </div>
                 <hr>
-                <a class="btn btn-primary btn-lg learn-more-button" href="{% url 'home' %}" role="button">
-                    Home
-                </a>
+                {% if from_profile %}
+                    <a class="btn btn-primary btn-lg back-button" href="{% url 'profile' %}" role="button">
+                        Back to Profile
+                    </a>
+                {% else %}
+                    <a class="btn btn-primary btn-lg back-button" href="{% url 'home' %}" role="button">
+                        Home
+                    </a>
+                {% endif %}
             </div>
         </div>
     </div>

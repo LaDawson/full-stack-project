@@ -38,6 +38,7 @@ def consultation_history_admin(request, consultation_number):
     template = 'admin_pages/admin_consultation.html'
     context = {
         'consultation': consultation,
+        'from_admin': True,
     }
 
     return render(request, template, context)

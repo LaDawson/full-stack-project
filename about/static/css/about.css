@@ -71,9 +71,6 @@ h1, h2, h3 {
     font-size: 20px;
     text-shadow: 2px 2px 2px black
 }
-.progress-bar:hover {
-    background-color: rgba(0,0,0, 1) !important;
-}
 .bar1 {
     margin-top: 30px;
 }
@@ -166,3 +163,9 @@ h1, h2, h3 {
     .header-container {
         margin-bottom: 0; 
 }}
+
+@media (min-width: 1000px) {
+    .progress-bar:hover {
+        background-color: rgba(0,0,0, 1) !important;
+    }
+}

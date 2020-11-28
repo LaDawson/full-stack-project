@@ -28,6 +28,24 @@ class StripeWH_Handler:
             [customer_email]
         )
 
+    def _send_consultation_email(self, consultation):
+
+        contact_email = settings.DEFAULT_CONTACT_EMAIL
+        subject = render_to_string(
+            'confirmation_emails/confirmation_email_subject_admin.txt',
+            {'consultation': consultation})
+        body = render_to_string(
+            'confirmation_emails/confirmation_email_body_admin.txt',
+            {'consultation': consultation,
+                })
+
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_CONTACT_EMAIL,
+            [contact_email]
+        )
+
     def handle_event(self, event):
 
         return HttpResponse(

@@ -27,6 +27,11 @@
 }
 .profile-title {
     padding-bottom: 10px;
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+}
+.profile-title-sm {
+    padding-bottom: 10px;
 }
 .small-hr {
     margin-top: 30px;

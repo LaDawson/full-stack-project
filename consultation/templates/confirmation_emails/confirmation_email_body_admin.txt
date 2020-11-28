@@ -1,0 +1,14 @@
+Hello Lewis,
+
+This order is from {{ consultation.first_name }} {{ consultation.last_name }},
+
+The order information is below:
+
+Consultation Number: {{ consultation.consultation_number }}
+Consultation Order Date: {{ consultation.date }}
+Consultation Cost: £30
+
+The customer email: {{ consultation.email }}
+
+The customer phone number: {{ consultation.phone_number }}
+
