@@ -140,7 +140,6 @@ h1, h2, h3 {
         background-color: transparent;
         height: 1000px;
     }
-
     .right-tab {
         padding-top: 150px;
     }
@@ -157,6 +156,9 @@ h1, h2, h3 {
     .about-me-margin {
         margin-bottom: 80px;
     }
+}
+
+@media (max-width: 1600px) {
     .what-i-do-bottom {
         margin-top: 0;
         margin-bottom: 10px;
