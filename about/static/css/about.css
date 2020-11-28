@@ -117,6 +117,11 @@ h1, h2, h3 {
     margin-top: 20px;
     margin-bottom: 40px;
 }
+.what-i-do-bottom {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
 .about-icon {
     font-size: 28px;
     margin-right: 20px;
@@ -149,9 +154,13 @@ h1, h2, h3 {
 } 
 
 @media (max-width: 1300px) {
-        .about-me-margin {
+    .about-me-margin {
         margin-bottom: 80px;
-        }
+    }
+    .what-i-do-bottom {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
 }
 
 @media (max-width: 380px) {
