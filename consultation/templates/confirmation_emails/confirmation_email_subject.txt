@@ -1,1 +1,1 @@
-The Coding Pen Confirmation for Consulatation Number {{ consultation.consultation.number }}
+The Coding Pen Consulation Confirmation

@@ -64,7 +64,7 @@ class StripeWH_Handler:
             phone_number__iexact=billing_details.phone,
             stripe_pid=pid,
         )
-        
+
         self._send_confirmation_email(consultation)
         return HttpResponse(
             content=f'Webhook received: {event["type"]} \

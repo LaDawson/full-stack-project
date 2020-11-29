@@ -19,7 +19,7 @@ def profile(request):
 
         if form.is_valid():
             form.save()
-            messages.success(request, 'Profile updated successfully')
+            messages.success(request, 'Profile updated')
 
     template = 'profiles/profile.html'
     context = {
