@@ -3,7 +3,7 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
 from .models import Consultation
-
+import time
 
 class StripeWH_Handler:
 
@@ -57,14 +57,25 @@ class StripeWH_Handler:
         pid = intent.id
         billing_details = intent.charges.data[0].billing_details
 
-        consultation = Consultation.objects.get(
-            first_name__iexact=billing_details.name,
-            email__iexact=billing_details.email,
-            phone_number__iexact=billing_details.phone,
-            stripe_pid=pid,
-        )
+        consultation_exists = False
+        attempt = 1
+        while attempt <= 5:
+            try:
+                consultation = Consultation.objects.get(
+                    first_name__iexact=billing_details.name,
+                    email__iexact=billing_details.email,
+                    phone_number__iexact=billing_details.phone,
+                    stripe_pid=pid,
+                )
+                consultation_exits = True
+                break
+            except Consultation.DoesNotExist:
+                attempt += 1
+                time.sleep(1)
 
-        self._send_confirmation_email(consultation)
+        if consultation_exits:
+            self._send_confirmation_email(consultation)
+            self._send_consultation_email(consultation)
         return HttpResponse(
             content=f'Webhook received: {event["type"]} \
                 Consultation received, confirmation email sent',
