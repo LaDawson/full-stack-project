@@ -4,7 +4,7 @@
 /* -------------- Page Styles -------------- */
 
 body {
-    background: url('media/about-me-bg.JPG') no-repeat top right fixed;
+    background: url('/media/about-me-bg.JPG') no-repeat top right fixed;
     background-size: cover;
     height: calc(100vh - 59px); 
     font-family: 'Patua One', cursive;
