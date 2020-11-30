@@ -10,5 +10,9 @@ Consultation Cost: £30
 
 The customer email: {{ consultation.email }}
 
+The consultation idea:
+
+{{ consultation.consultation_idea }}
+
 The customer phone number: {{ consultation.phone_number }}
 

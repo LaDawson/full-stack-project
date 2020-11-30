@@ -36,8 +36,7 @@ class StripeWH_Handler:
             {'consultation': consultation})
         body = render_to_string(
             'confirmation_emails/confirmation_email_body_admin.txt',
-            {'consultation': consultation,
-                })
+            {'consultation': consultation})
 
         send_mail(
             subject,

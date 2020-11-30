@@ -99,6 +99,10 @@ If the payment failed, the user will receive an error message to let them know t
 The payment system used is Stripe. Stripe is a payment platform, like Paypal, which allows secure transactions to occur.
 None of the users card details are stored on the site so that none of their data is at risk.
 
+### Emails:
+Currently the website is using django mail to send confirmation/verification emails to the user and the admin. 
+This is to aid in the registration of the users and also to make sure that they have a copy of their order as proof of purchase.
+
 ### Mobile device styles:
 The desktop and mobile devices have different layouts.
 The nav bar on mobile devices with small screens is a collapsable navigation bar, which once the dropdown is pressed will reveal the same
@@ -134,7 +138,8 @@ I used Django to help develop the entire site and cut down the development time.
 ### Bootstrap: https://getbootstrap.com/
 I used Bootstrap as the main framework for my website, it provided the website structure and layout. Also, it was used
 it was used to help the styling of the forms, nav bar and footer. I also used a base template provided by bootstrap to 
-quickly set up the base.html template, which I then customized. 
+quickly set up the base.html template, which I then customized. I used bootstrap for the basic tables, buttons and the progress
+bars also.
 
 ### Google Fonts: https://fonts.google.com/ 
 This was used for the font of the text and titles.
@@ -157,6 +162,10 @@ Allauth is provided by django, which deals with the registration, logins and log
 
 ### Home page background image
 https://pixabay.com/photos/desktop-desk-iphone-workplace-1155613/
+
+
+I also used parts of the Code Institutes lessons in my work where I struggled to make my versions work correctly, such as the backend for the stripe
+payment system and user profiles.
 
 
 ## Testing:
@@ -240,7 +249,16 @@ https://pixabay.com/photos/desktop-desk-iphone-workplace-1155613/
 2. Submit a consultation and verify a notification pops up to tell you that it was successful, if the form/payment fails then it will notify you of the failure.
 3. Go to a past order from your profile and verify that it notifies you that it is a past order confirmation.
 
-### Bugs I Encountered:
+### Emails:
+1. Register for an account and you should receive an email for verification.
+2. Place a test order and verify both the admin and user receive confirmation emails.
+
+### Progress Bars:
+1. When the screen width is above 1000px, hover over the bars and they should change color to black.
+This was not implemented in the mobile view as the padding/margin of other elements overlapped the progress bars so the hover function did not work.
+
+
+## Bugs I Encountered:
 Most of the small bugs I encountered were simple fixes to do with typos such as spelling mistakes or referencing wrong.
 If I could not solve a bug by reading through my code I would try to use the google developer tools and the console to figure out where
 an error was coming from. Most of the larger bugs I encountered were coming from the stripe payment system. I had a difficult time setting up
@@ -248,6 +266,12 @@ Stripe and the webhooks correctly so that not only a payment would be successful
 occured in the views.py or my stripe javascript file due to me using the incorrect code for the most part. These issues were solved with the help 
 of the tutors provided by the Code Institute and also by looking back on lessons to help understand the code needed for these areas and to walk me through
 the process a couple more times.
+
+A particular bug I encountered was that Stripe webhooks would return an error when submitting the form. This was because I was trying
+to pass the user idea from the form as metadata. The idea was that the webhook would send this field as metadata so that the idea wouldn't
+be lost if the confirmation email was lost. After a long chat with a tutor, it was decided upon removing this meta data as it was 
+an unknown variable to stripe which was throwing an error. Instead I just kept the billing information within the stripe billing details.
+The consultation idea is instead now sent through an email to the admin similarly to the way a confirmation email is sent to the user.
 
 The lessons in particular were a great reference point to help as this was the first time taking on a Django project of this scale on my own, which lead to me
 getting confused and lost at particular parts that were new to me. Although I struggled through some parts, now that I have a better understanding of Django, and 
@@ -269,6 +293,8 @@ In the development version, DEBUG is set to true so that I could easily find err
 turned DEBUG off so that no information is leaked.
 All of the environment variables such as secret keys are removed from the code, then changed and instead stored as a variable on Heroku. This is so
 that people cannot see the keys and values for objects that might compromise security within the site/payment systems.
+The development and deployed versions also have different locations for the static and media files. In development they are all stored by sqlite3
+where as the deployed version has to retrieve the files from an AWS bucket which hosts the files.
 
 ## Deployment Process (GitHub):
 
@@ -301,18 +327,18 @@ Press enter and your local clone will be created.
 ## Deployment Process (Heroku):
 To deploy to heroku you need the following files:
 * requirements.txt - get this by typing "pip3 freeze --local > requirements.txt" into the terminal.
-* Procfile - just add this in the root of your project folder. Enter the values "web: python app.py" with the correct python file name.
-This is so that heroku can install the needed things to run your app and so that it recognises it as a python app.
+This is so that heroku can install the needed addons such as stripe in order to run the site.
+* Procfile - This tells heroku to run a gunicorn server and then 
+You will also need to add all of your config variables such as secret keys to the heroku app through the settings.
 
 1. Create an app on Heroku
-2. Type "heroku login" into the terminal
+2. Type "heroku login -i" into the terminal
 3. Enter your account details
 4. Type "git init" into the terminal
-5. Type "git remote add heroku "your Heroku git URL" into the terminal
+5. Type "git remote add heroku "your Heroku git URL" (which you find in the heroku app settings) into the terminal
 6. Type "git add ." into the terminal
 7. Type "git commit -m "Version Name"" into the terminal
-8. Type "git push -u heroku master" into the terminal
-9. Set your PORT and IP variables on heroku which you refer to in the python file
+8. Type "git push heroku master" to push the commit to heroku so it can start building the app.
 
-
-
+Currently I am using AWS to host my static files and media files in a bucket. This is because Heroku cannot
+store media files so you have to use an external site to host them.
