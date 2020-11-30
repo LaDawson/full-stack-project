@@ -273,6 +273,11 @@ be lost if the confirmation email was lost. After a long chat with a tutor, it w
 an unknown variable to stripe which was throwing an error. Instead I just kept the billing information within the stripe billing details.
 The consultation idea is instead now sent through an email to the admin similarly to the way a confirmation email is sent to the user.
 
+Another issue I had was that after I had deployed my site, I could not get the webhook to send the email confirmation. I spent hours looking through
+my code and having talks with tutors about the different possible causes. Although there were a few errors with variable names within my settings and
+webhooks this was not the cause. I had forgotten to create an endpoint on stripe for my deployed version of the site. Not only this but the config
+variable on heroku was incorrect, which took me a while to figure out, but once these were corrected the emails were being sent fine.
+
 The lessons in particular were a great reference point to help as this was the first time taking on a Django project of this scale on my own, which lead to me
 getting confused and lost at particular parts that were new to me. Although I struggled through some parts, now that I have a better understanding of Django, and 
 how to use it properly, it is easy to see how much more efficient it is to use Django for projects of this size rather than to write all of the code yourself.
